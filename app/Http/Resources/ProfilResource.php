@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class ProfilResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        return [
+            'user' => [
+                'id' => $this->id,
+                'name' => $this->name,
+                'bio' => $this->bio,
+            ],
+            'post' => $this->whenLoaded('post', function () {
+                return new PostResourceCollection($this->resource->post->loadCount('comment'));
+            })
+        ];
+    }
+}
