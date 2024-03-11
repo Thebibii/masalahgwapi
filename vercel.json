@@ -10,9 +10,9 @@
         }
     ],
     "env": {
-        "APP_ENV": "production",
+        "APP_ENV": "local",
         "APP_DEBUG": "true",
-        "APP_URL": "https://masalahgwapi.vercel.app/login",
+        "APP_URL": "https://masalahgwapi.vercel.app/",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
