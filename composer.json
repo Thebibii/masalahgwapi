@@ -14,7 +14,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "ramsey/uuid": "^4.7",
-        "recca0120/terminal": "^1.11"
+        "recca0120/terminal": "^1.6.8"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
