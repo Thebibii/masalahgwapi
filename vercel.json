@@ -1,18 +1,29 @@
 {
     "version": 2,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
+        "api/index.php": { "runtime": "vercel-php@0.6.1" }
     },
     "routes": [
+        {
+            "src": "/vendor/terminal/css/(.*)",
+            "dest": "public/vendor/terminal/css"
+        },
+        {
+            "src": "/vendor/terminal/js/(.*)",
+            "dest": "public/vendor/terminal/js"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
     ],
     "env": {
-        "APP_ENV": "local",
+        "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://masalahgwapi.vercel.app/",
+        "APP_URL": "https://masalahgwapiv1.vercel.app/",
+        "DB_CONNECTION": "pgsql",
+        "DATABASE_URL": "postgres://postgres.tjaimmtgrkyrudgofduw:g+ZA6*7+)th!-ar@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres",
+        "DB_PASSWORD": "g+ZA6*7+)th!-ar",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
@@ -23,7 +34,8 @@
 
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "array"
+        "SESSION_DRIVER": "array",
+        "CI": "false"
     },
     "outputDirectory": "public"
 }

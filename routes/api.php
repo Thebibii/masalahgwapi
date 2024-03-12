@@ -32,7 +32,7 @@ Route::get("/user/{name}/detail", [UsersController::class, 'profileUser'])->midd
 
 Route::get('/post/{id}/detail',  [PostController::class, 'detail'])->name('posts.detail')->middleware('auth:sanctum');
 
-Route::get('/posts',  [PostController::class, 'index'])->name('posts.index')->middleware('auth:sanctum');
+Route::get('/posts',  [PostController::class, 'index'])->name('posts.index');
 Route::post('/post', [PostController::class, 'store'])->name('posts.store')->middleware('auth:sanctum');
 Route::get('/posts/user',  [PostController::class, 'getPostUser'])->middleware('auth:sanctum');
 Route::patch('/post/{id}/update', [PostController::class, 'update'])->name('posts.update')->middleware('auth:sanctum');
